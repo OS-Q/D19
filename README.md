@@ -1,4 +1,4 @@
-﻿# D92：[IR通道](https://github.com/OS-Q/D92)
+﻿# D95：[IR通道](https://github.com/OS-Q/D95)
 
 [![sites](OS-Q/OS-Q.png)](http://www.OS-Q.com)
 
@@ -6,17 +6,17 @@
 
 #### 关于系统架构：[OS-Q](https://github.com/OS-Q/OS-Q)
 
-## [平台描述](https://github.com/OS-Q/D92/wiki) 
+## [平台描述](https://github.com/OS-Q/D95/wiki) 
 
 IR通道设备，将其他各种MCU外设转换为IR通信，实现红外通信控制
 
 ### [资源](OS-Q/)
 
-#### [文档资料](docs/)
+#### [资料手册](docs/)
 
 包括主要的芯片手册，设计参考等
 
-#### [工程代码](project/)
+#### [驱动工程](project/)
 
 包括软件工程文件
 
