@@ -1,4 +1,4 @@
-# ESP RCM - Room Climate Monitor with ESP8266, HTU21D, Si7021, AM2320
+# Room Climate Monitor with ESP8266, HTU21D, Si7021, AM2320
 
 Room Climate Monitor system using a cheap sensor HTU21D, SI7021 or AM2320 and Espressif's ESP8266 Microcontroller. 
 
@@ -84,9 +84,3 @@ Remember, the I2C bus needs pull-up resistors of 4.7kΩ. On most modules, howeve
 * Check your new IP address from serial monitor and connect to your ESP again. (You can also connect to "http://esp-rcm.local")
 * Congratulations, everything went well, if you encounter any issue feel free to ask help on GitHub.
 
-### Known Issues
-* So far, no issue is known
-* Please also check [GitHub issues](https://github.com/Pako2/esp-rcm/issues).
-
-## License
-The code parts written by ESP-RCM project's authors are licensed under [GNU GPL v.3](https://www.gnu.org/licenses/gpl.html), 3rd party libraries that are used by this project are licensed under different license schemes, please check them out as well.
