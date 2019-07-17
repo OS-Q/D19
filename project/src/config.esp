@@ -63,7 +63,7 @@ uint8_t ICACHE_FLASH_ATTR loadConfiguration()
 		uint8_t i = 1;
 		do
 		{
-			if (1)//(myHTU21D.begin(SDA_PIN, SCL_PIN))
+			if (myHTU21D.begin(SDA_PIN, SCL_PIN))
 			{
 				sensorok = true;
 #ifdef DEBUG
