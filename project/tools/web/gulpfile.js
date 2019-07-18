@@ -201,7 +201,7 @@ gulp.task("fonts", gulp.series("fontgz", function F9() {
 }));
 
 gulp.task('htmlsprep', gulp.series(function FA() {
-    return gulp.src('../../src/websrc/*.htm*')
+    return gulp.src('../websrc/*.htm*')
         .pipe(htmlmin({collapseWhitespace: true, minifyJS: true}))
         .pipe(gulp.dest('../../src/websrc/gzipped/'))
         .pipe(gzip({
@@ -211,7 +211,7 @@ gulp.task('htmlsprep', gulp.series(function FA() {
 }));
 
 gulp.task("htmlsgz", gulp.series("htmlsprep", function FB() {
-    return gulp.src("../../src/websrc/*.htm*")
+    return gulp.src("../websrc/*.htm*")
         .pipe(gzip({
             append: true
         }))
