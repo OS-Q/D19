@@ -23,7 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-#define VERSION "0.1.3"
+#define VERSION "1.0.0"
 
 #include "Arduino.h"
 #include <ESP8266WiFi.h>
@@ -112,7 +112,7 @@ unsigned long cooldown = 0;
 unsigned long deltaTime = 0;
 unsigned long uptime = 0;
 bool shouldReboot = false;
-bool inAPMode = false; // 333333333333333333333333333333333333333333333
+bool inAPMode = false;  
 bool isWifiConnected = false;
 unsigned long autoRestartIntervalSeconds = 0;
 

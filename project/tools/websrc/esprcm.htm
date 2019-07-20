@@ -535,7 +535,7 @@
         <br>
     </div>
     <div class="row form-group">
-        <label class="col-xs-3">Time Zone</label>
+        <label class="col-xs-3">时区选择</label>
         <span class="col-xs-9 col-md-5">
                 <select class="form-control input-sm" name="DropDownTimezone" id="DropDownTimezone">
                   <option value="-12">(GMT -12:00) Eniwetok, Kwajalein</option>
@@ -551,7 +551,7 @@
                   <option value="-3">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
                   <option value="-2">(GMT -2:00) Mid-Atlantic</option>
                   <option value="-1">(GMT -1:00 hour) Azores, Cape Verde Islands</option>
-                  <option selected="selected" value="0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+                  <option value="0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
                   <option value="1">(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
                   <option value="2">(GMT +2:00) Kaliningrad, South Africa</option>
                   <option value="3">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
@@ -563,7 +563,7 @@
                   <option value="5.75">(GMT +5:45) Kathmandu</option>
                   <option value="6">(GMT +6:00) Almaty, Dhaka, Colombo</option>
                   <option value="7">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
-                  <option value="8">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+                  <option selected="selected" value="8">(GMT +8:00) 北京, Perth, Singapore, Hong Kong</option>
                   <option value="9">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
                   <option value="9.5">(GMT +9:30) Adelaide, Darwin</option>
                   <option value="10">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
@@ -585,7 +585,7 @@
 </div>
 <div id="climatecontent">
 <div class="container">
-<legend>Climate Status</legend><br>
+<legend> 温湿度</legend><br>
   <div class="row">
     <div class="col-sm-6">
       <div class="thermometer">
@@ -618,11 +618,11 @@
     <br>
     <div class="row text-center">
         <div class="col-md-8 col-md-offset-2">
-            <h1>Welcome</h1>
-            <p>Here you can find some information about your device status.</p>
+            <h1>OS-Q</h1>
+            <p>控制器系统状态页面</p>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <span>esp-rcm (Room Climate Monitor)</span>&nbsp; <small><strong><span id="sver"></span></strong></small>
+                    <span>传感器终端设备 </span>&nbsp; <small><strong><span id="sver"></span></strong></small>
                 </div>
             </div>
         </div>
@@ -686,7 +686,7 @@
                         <td id="ip"></td>
                     </tr>
                     <tr>
-                        <th>Gateway</th>
+                        <th>Gate</th>
                         <td id="gate"></td>
                     </tr>
                     <tr>
