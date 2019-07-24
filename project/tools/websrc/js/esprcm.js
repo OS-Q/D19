@@ -15,13 +15,15 @@ var config = {
     "command": "configfile",
     "network": {
         "bssid": "",
-        "ssid": "",
+        "ssid": "Q[5]",
         "pswd": "",
         "dhcp": 1,
         "ip": "",
         "subnet": "",
         "gateway": "",
-        "dns": ""
+        "dns": "",
+        "apip": "192.168.5.1",
+        "apsubnet": "255.255.255.0"
     },
     "hardware": {
         "sensorType": 0,
@@ -29,9 +31,9 @@ var config = {
         "cfgpin": 12
     },
     "general": {
-        "hostnm": "Q-RCM",
+        "hostnm": "QSENSOR",
         "restart": 0,
-        "pswd": "admin"
+        "pswd": "passwd"
     },
     "mqtt": {
         "enabled": 0,
@@ -76,6 +78,8 @@ var config = {
 var page = 1;
 var haspages;
 var logdata;
+var recordstore = 0;
+var slot = 0;
 var completed = false;
 var file = {};
 var backupstarted = false;
@@ -179,7 +183,7 @@ function uncommited() {
     $("#commit").fadeOut(200, function () {
         $(this).css("background", "gold").fadeIn(1000);
     });
-    document.getElementById("commit").innerHTML = "<h6>You have uncommited changes, please click here to review and commit.</h6>";
+  document.getElementById("commit").innerHTML = "<h6>有未同步修改，请点击确认.</h6>";
     $("#commit").click(function () {
         revcommit();
         return false;
