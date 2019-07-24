@@ -3,10 +3,10 @@
     <br>
     <div class="row">
         <div class="col-sm-6">
-            <legend>Backup</legend>
-            <h6 class="text-muted">Please make sure that you have made a backup on regular basis.</h6>
+            <legend>数据备份</legend>
+            <h6 class="text-muted">备份数据将通过json文件下载到本地 </h6>
             <div>
-                <button class="btn btn-link btn-sm" onclick="backupset();">Backup Settings</button>
+                <button class="btn btn-link btn-sm" onclick="backupset();">备份配置数据</button>
                 <a id="downloadSet" style="display:none"></a>
             </div>
             <br>
@@ -55,7 +55,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please wait while your ESP restarts...</h3>
+                        <h3 class="panel-title">数据写入，请稍后...</h3>
                     </div>
                     <div class="panel-body">
                         <div class="progress">
@@ -89,19 +89,19 @@
         <br>
     </div>
     <div class="row form-group">
-        <label class="col-xs-3">Auto Restart<i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="How often to automatically restart the unit to lessen risk of memory leaks and crashes."></i></label>
+        <label class="col-xs-3">定时重启<i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="How often to automatically restart the unit to lessen risk of memory leaks and crashes."></i></label>
         <span class="col-xs-9 col-md-5">
                 <select class="form-control input-sm" id="autorestart" name="autorestart">
-                  <option value='0'>Never</option>
-                  <option value='86400' selected>Every 24h</option>
-                  <option value='604800'>Every 7 days</option>
-                  <option value='18144000'>Every 30 days</option>
+                  <option value='0'>从不</option>
+                  <option value='86400' selected> 每天</option>
+                  <option value='604800'>每周</option>
+                  <option value='18144000'>每月</option>
                 </select>
               </span>
         <br>
         <br>
         <div class="col-xs-9 col-md-8">
-            <button onclick="savegeneral()" class="btn btn-primary btn-sm pull-right">Save</button>
+            <button onclick="savegeneral()" class="btn btn-primary btn-sm pull-right">保存配置</button>
         </div>
     </div>
     <div style="clear:both;">
@@ -115,8 +115,8 @@
 <div id="hardwarecontent">
     <br>
     <br>
-    <legend>Hardware Settings</legend>
-    <h6 class="text-muted">Please refer the <a href="https://github.com/esprcm/esp-rcm#pin-layout">documentation</a> for pin configuration.</h6>
+    <legend>硬件配置</legend>
+    <h6 class="text-muted">硬件配置可参阅<a href="https://github.com/OS-Q/D19/tree/master/project#interface">图文</a> .</h6>
 	    <br>
     <div class="row form-group">
         <label class="col-xs-3">Sensor Type<i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Choose sensor type."></i></label>
@@ -156,7 +156,7 @@
     </div>
     <div class="row form-group">
         <div class="col-xs-9 col-md-8">
-            <button onclick="savehardware()" class="btn btn-primary btn-sm pull-right">Save</button>
+            <button onclick="savehardware()" class="btn btn-primary btn-sm pull-right">保存配置</button>
         </div>
     </div>
     <br>
@@ -166,17 +166,17 @@
     <br>
     <br>
     <div class="text-center" id="loading-img">
-        <h5>Please wait while fetching data...<span id="loadpages"></span></h5>
+        <h5>等待数据...<span id="loadpages"></span></h5>
         <br>
     </div>
     <div>
-        <legend>Access Log</legend>
+        <legend>通行记录</legend>
         <div class="panel panel-default">
             <div>
                 <table id="latestlogtable" class="table" data-paging="true" data-filtering="true" data-sorting="true" data-editing="false" data-state="true"></table>
             </div>
         </div>
-        <button onclick="clearlatest()" class="btn btn-primary btn-sm">Clear Log</button>
+        <button onclick="clearlatest()" class="btn btn-primary btn-sm">清除记录</button>
         <div style="clear:both;">
             <br>
             <br>
@@ -189,17 +189,17 @@
     <br>
     <br>
     <div class="text-center" id="loading-img">
-        <h5>Please wait while fetching data...<span id="loadpages"></span></h5>
+        <h5>等待数据取回...<span id="loadpages"></span></h5>
         <br>
     </div>
     <div>
-        <legend>Event Log</legend>
+        <legend>运行日志</legend>
         <div class="panel panel-default">
             <div>
                 <table id="eventtable" class="table" data-paging="true" data-filtering="true" data-sorting="true" data-editing="false" data-state="true"></table>
             </div>
         </div>
-        <button onclick="clearevent()" class="btn btn-primary btn-sm">Clear Log</button>
+        <button onclick="clearevent()" class="btn btn-primary btn-sm">清除日志</button>
         <div style="clear:both;">
             <br>
             <br>
@@ -210,10 +210,10 @@
 <div id="mqttcontent">
     <br>
     <br>
-    <legend>MQTT Settings</legend>
+    <legend>MQTT配置</legend>
 	    <br>
     <div class="row form-group">
-        <label class="col-xs-3">MQTT<i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Please choose if you want to enable MQTT"></i></label>
+        <label class="col-xs-3">MQTT使能 <i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Please choose if you want to enable MQTT"></i></label>
         <div class="col-xs-9">
             <form>
                 <label class="radio-inline"><input type="radio" value="1" name="mqttenabled">Enabled</label>
@@ -451,13 +451,13 @@
 
     <br>
     <div class="row form-group" id="dhcp">
-        <label class="col-xs-3">Use DHCP<i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Choose if you want to get an IP address from DHCP server or not."></i></label>
+        <label class="col-xs-3"> DHCP配置<i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Choose if you want to get an IP address from DHCP server or not."></i></label>
         <div class="col-xs-9">
             <form>
                 <label class="radio-inline">
-                    <input type="radio" value="1" name="dhcpenabled" onclick="handleDHCP();" checked>Yes</label>
+                    <input type="radio" value="1" name="dhcpenabled" onclick="handleDHCP();" checked>使用</label>
                 <label class="radio-inline">
-                    <input type="radio" value="0" name="dhcpenabled" onclick="handleDHCP();">No</label>
+                    <input type="radio" value="0" name="dhcpenabled" onclick="handleDHCP();">禁用</label>
             </form>
         </div>
     </div>
@@ -492,7 +492,7 @@
     <br>
     <div class="row form-group">
         <div class="col-xs-9 col-md-8">
-            <button onclick="savenetwork()" class="btn btn-primary btn-sm pull-right">Save</button>
+            <button onclick="savenetwork()" class="btn btn-primary btn-sm pull-right">保存配置</button>
         </div>
     </div>
     <br>
@@ -502,22 +502,22 @@
 <div id="ntpcontent">
     <br>
     <br>
-    <legend>Time Settings</legend>
-    <h6 class="text-muted">Small differences between device time and local time can be ignored. Please see <a href="https://github.com/esprcm/esp-rcm#time">documentation</a> for additional information.</h6>
+    <legend>时间同步</legend>
+    <h6 class="text-muted">用于同步网络时间到RFID设备. 详情查看 <a href="http://www.ntp.org/">ntp.org</a> .</h6>
 	<br>
     <div class="row form-group">
-        <label class="col-xs-3">Device Time</label>
+        <label class="col-xs-3">设备时间</label>
         <span id="utc" class="col-xs-9 col-md-5">
               </span>
     </div>
     <div class="row form-group">
-        <label class="col-xs-3">Browser Time</label>
+        <label class="col-xs-3">网络时间</label>
         <span id="rtc" class="col-xs-9 col-md-5">
               </span>
     </div>
     <div class="row form-group">
         <div class="col-xs-3">
-            <button onclick="syncBrowserTime()" class="btn btn-link btn-sm">Sync Browser Time to Device</button><i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Send your PC/Phone time to ESP."></i>
+            <button onclick="syncBrowserTime()" class="btn btn-link btn-sm">同步浏览器时钟</button><i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="将该浏览器的时钟同步到设备中 ."></i>
         </div>
     </div>
     <div class="row form-group">
@@ -528,7 +528,7 @@
         <br>
     </div>
     <div class="row form-group">
-        <label class="col-xs-3">Intervals<i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Intervals between Time Sync in Minutes"></i></label>
+        <label class="col-xs-3">同步间隔<i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Intervals between Time Sync in Minutes"></i></label>
         <span class="col-xs-9 col-md-5">
               <input class="form-control input-sm" placeholder="in Minutes" value="30" id="intervals" type="text">
               </span>
@@ -574,7 +574,7 @@
         <br>
         <br>
         <div class="col-xs-9 col-md-8">
-            <button onclick="saventp()" class="btn btn-primary btn-sm pull-right">Save</button>
+            <button onclick="saventp()" class="btn btn-primary btn-sm pull-right">保存配置</button>
         </div>
         <br>
         <br>
@@ -585,7 +585,7 @@
 </div>
 <div id="climatecontent">
 <div class="container">
-<legend> 实时数据</legend><br>
+<legend> 实时状态 </legend><br>
   <div class="row">
     <div class="col-sm-6">
       <div class="thermometer">
@@ -618,32 +618,32 @@
     <br>
     <div class="row text-center">
         <div class="col-md-8 col-md-offset-2">
-            <h1>OS-Q</h1>
+            <h1>Sensor</h1>
             <p>控制器系统状态页面</p>
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <span>传感器终端设备 </span>&nbsp; <small><strong><span id="sver"></span></strong></small>
+                    <span>OS-Q 传感器终端设备 </span>&nbsp; <small><strong><span id="sver"></span></strong></small>
                 </div>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default table-responsive">
                 <table class="table table-hover table-striped table-condensed">
-                    <caption>Device</caption>
+                    <caption>设备状态</caption>
                     <tr>
-                        <th>Chip ID</th>
+                        <th>设备 UID</th>
                         <td id="chip"></td>
                     </tr>
                     <tr>
-                        <th>CPU Clock</th>
+                        <th>CPU频率</th>
                         <td id="cpu"></td>
                     </tr>
                     <tr>
-                        <th>Uptime</th>
+                        <th>运行时长</th>
                         <td id="uptime"></td>
                     </tr>
                     <tr>
-                        <th>Free Heap</th>
+                        <th>剩余RAM</th>
                         <td>
                             <div class="progress" style="margin-bottom: 0 !important;">
                                 <div id="heap" class="progress-bar progress-bar-primary" role="progressbar">
@@ -653,7 +653,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Free Flash</th>
+                        <th>剩余数据</th>
                         <td>
                             <div class='progress' style="margin-bottom: 0 !important;">
                                 <div id="flash" class="progress-bar progress-bar-primary" role="progressbar">
@@ -663,7 +663,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Free SPIFFS</th>
+                        <th>剩余磁盘</th>
                         <td>
                             <div class='progress' style="margin-bottom: 0 !important;">
                                 <div id="spiffs" class="progress-bar progress-bar-primary" role="progressbar">
@@ -676,7 +676,7 @@
             </div>
             <div class="panel panel-default table-responsive">
                 <table class="table table-hover table-striped table-condensed">
-                    <caption>Network</caption>
+                    <caption>网络状态</caption>
                     <tr>
                         <th>SSID</th>
                         <td id="ssidstat"></td>
@@ -767,7 +767,7 @@
         <br>
         <br>
         <div class="col-xs-9 col-md-8">
-            <button onclick="savealarms()" class="btn btn-primary btn-sm pull-right">Save</button>
+            <button onclick="savealarms()" class="btn btn-primary btn-sm pull-right">保存</button>
         </div>
     </div>
 </div>
