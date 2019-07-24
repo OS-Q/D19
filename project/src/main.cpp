@@ -376,9 +376,9 @@ void ICACHE_RAM_ATTR loop()
 		}
 		if (autoRestartIntervalSeconds > 0 && uptime > autoRestartIntervalSeconds * 1000)
 		{
-			writeEvent("INFO", "sys", "System is going to reboot", "");
+			writeEvent("INFO", "sys", "系统计划重启", "");
 #ifdef DEBUG
-			Serial.println(F("[ WARN ] Auto restarting..."));
+			Serial.println(F("[ WARN ] 自动重启..."));
 #endif
 
 			shouldReboot = true;
