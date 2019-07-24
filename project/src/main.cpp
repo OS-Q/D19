@@ -22,7 +22,7 @@ GNU GPL v.3 License
 #include <HTU21D.h>
 #include <AM2320.h>
 
-#define DEBUG
+//#define DEBUG
 
 // these are from vendors
 #include "webh/glyphicons-halflings-regular.woff.gz.h"
