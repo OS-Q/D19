@@ -148,11 +148,11 @@ void ICACHE_FLASH_ATTR setupWebServer()
 		String remoteIP = printIP(request->client()->remoteIP());
 		if (!request->authenticate(http_username, http_pass))
 		{
-			writeEvent("WARN", "websrv", "New login attempt", remoteIP);
+			writeEvent("WARN", "web", "New login attempt", remoteIP);
 			return request->requestAuthentication();
 		}
 		request->send(200, "text/plain", "Success");
-		writeEvent("INFO", "websrv", "Login success!", remoteIP);
+		writeEvent("INFO", "web", "Login success!", remoteIP);
 	});
 	server.rewrite("/", "/index.html");
 	server.begin();

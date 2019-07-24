@@ -29,7 +29,7 @@ var config = {
         "cfgpin": 12
     },
     "general": {
-        "hostnm": "esp-rcm",
+        "hostnm": "Q-RCM",
         "restart": 0,
         "pswd": "admin"
     },
@@ -60,7 +60,7 @@ var config = {
     "ntp": {
         "server": "pool.ntp.org",
         "interval": 30,
-        "timezone": 0
+        "timezone": 8
     },
     "alarm": {
         "templimits": "16;24",
