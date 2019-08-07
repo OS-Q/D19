@@ -16,7 +16,7 @@ Edge-Q -> Q[4] -> M[12] -> W[52] -> D[365]
 
 下辖7个可用组件
 
-### [平台相关](https://github.com/OS-Q/W15)
+### [平台拓扑](https://github.com/OS-Q/W15)
 
 * M4：[通信管道](https://github.com/OS-Q/M4)
 	* W14：[ESP8285 LITE](https://github.com/OS-Q/W14)
@@ -42,5 +42,5 @@ Edge-Q -> Q[4] -> M[12] -> W[52] -> D[365]
 主控资料和选型方案详情可查阅
 [SoC资源平台](https://github.com/sochub)
 
-### [OS-Q : Operation System for edge devices](http://www.OS-Q.com/Edge/W14)
+### [OS-Q : Open Solution & Open Source](http://www.OS-Q.com/Edge/W14)
 ####  2019-8-8
