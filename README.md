@@ -1,18 +1,20 @@
-﻿# [室内环境](https://github.com/OS-Q/D19)
+﻿# [ESP8285](https://github.com/OS-Q/W14)
 
 [![sites](OS-Q/OS-Q.png)](http://www.OS-Q.com)
 
-#### 归属采集单元：[W2](https://github.com/OS-Q/W2)
+#### 归属arduino：[M4](https://github.com/OS-Q/M4)
 
 #### 关于系统架构：[OS-Q](https://github.com/OS-Q)
 
-Edge-Q -> 体系 Q[1,4] -> 节点 M[1,12] -> 平台 W[1,52] -> 设备 D[1,365]
+Edge-Q -> Q[4] -> M[12] -> W[52] -> D[365]
 
-## [设备描述](https://github.com/OS-Q/D19/wiki) 
+## [设备描述](https://github.com/OS-Q/W14/wiki) 
 
-室内环境设备，通过收集各种传感器数据上传云端，平台化管理
+基于小容量高集成度ESP设备
 
 [![sites](OS-Q/NodeMCU-V3.png)](http://www.OS-Q.com)
+
+下辖7个可用组件
 
 ### [收录资源](https://github.com/OS-Q/)
 
@@ -24,5 +26,5 @@ Edge-Q -> 体系 Q[1,4] -> 节点 M[1,12] -> 平台 W[1,52] -> 设备 D[1,365]
 主控资料和选型方案详情可查阅
 [SoC资源平台](https://github.com/sochub)
 
-### [OS-Q : Operation System for edge devices](http://www.OS-Q.com/Edge/D19)
-####  2019-7-14
+### [OS-Q : Operation System for edge devices](http://www.OS-Q.com/Edge/W14)
+####  2019-8-8
