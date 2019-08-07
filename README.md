@@ -16,6 +16,22 @@ Edge-Q -> Q[4] -> M[12] -> W[52] -> D[365]
 
 下辖7个可用组件
 
+### [平台相关](https://github.com/OS-Q/W15)
+
+* M4：[通信管道](https://github.com/OS-Q/M4)
+	* W14：[ESP8285 LITE](https://github.com/OS-Q/W14)
+		* D92：[基础系统组件](https://github.com/OS-Q/D92)
+		* D93：[GPIO控制组件](https://github.com/OS-Q/D93)
+		* D94：[通信扩展组件](https://github.com/OS-Q/D94)
+		* D95：[传感器组件](https://github.com/OS-Q/D95)
+		* D96：[串口组件](https://github.com/OS-Q/D96)
+		* D97：[数据及格式化](https://github.com/OS-Q/D97)
+		* D98：[web化组件](https://github.com/OS-Q/D98)
+    * W15：[ESP8266 PRO](https://github.com/OS-Q/W16)
+	* W16：[ESP32 LITE](https://github.com/OS-Q/W16)
+	* W17：[ESP32 PRO](https://github.com/OS-Q/W17)
+
+
 ### [收录资源](https://github.com/OS-Q/)
 
 * [文档](docs/)
