@@ -1,14 +1,9 @@
-﻿# [BLDC](https://github.com/OS-Q/W12)
+﻿# [modbus freeRTOS](https://github.com/OS-Q/W16)
 
 [![sites](http://182.61.61.133/link/resources/OSQ.png)](http://www.OS-Q.com)
 
-### [FOC描述](https://github.com/OS-Q/W12/wiki)
+### [工程描述](https://github.com/OS-Q/W16/wiki)
 
-[BLDC](https://github.com/OS-Q/W12)
+[modbus freeRTOS](https://github.com/OS-Q/W16)
 
-### [收录资源](https://github.com/OS-Q/)
-
-* [文档](docs/)
-* [工程](project/)
-
-### [OS-Q = Open Solutions | Open Source | Operating System ](http://www.OS-Q.com)
+### [OS-Q = Open Solutions | Open Source | Operating System ](http://www.OS-Q.com/W16)
