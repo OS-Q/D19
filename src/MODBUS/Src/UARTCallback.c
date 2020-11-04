@@ -1,10 +1,3 @@
-/*
- * UARTCallback.c
- *
- *  Created on: May 27, 2020
- *      Author: Alejandro Mera
- */
-
 #include "FreeRTOS.h"
 #include "cmsis_os.h"
 #include "task.h"
@@ -28,11 +21,11 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 	int i;
 	for (i = 0; i < numberHandlers; i++ )
 	{
-	   	if (mHandlers[i]->port == huart )
-	   	{
-	   		xTaskNotifyFromISR(mHandlers[i]->myTaskModbusAHandle, 0, eNoAction, &xHigherPriorityTaskWoken);
-	   		break;
-	   	}
+		if (mHandlers[i]->port == huart )
+		{
+			xTaskNotifyFromISR(mHandlers[i]->myTaskModbusAHandle, 0, eNoAction, &xHigherPriorityTaskWoken);
+			break;
+		}
 	}
 	/* Modbus RTU callback END */
 
