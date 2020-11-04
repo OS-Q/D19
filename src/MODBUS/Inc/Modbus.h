@@ -1,9 +1,4 @@
-/*
- * Modbus.h
- *
- *  Created on: May 5, 2020
- *      Author: Alejandro Mera
- */
+
 
 #ifndef THIRD_PARTY_MODBUS_INC_MODBUS_H_
 #define THIRD_PARTY_MODBUS_INC_MODBUS_H_

@@ -1,10 +1,4 @@
-/*
- * Modbus.c
- *  Modbus RTU Master and Slave library for STM32 CUBE with FreeRTOS
- *  Created on: May 5, 2020
- *      Author: Alejandro Mera
- *      Adapted from https://github.com/smarmengol/Modbus-Master-Slave-for-Arduino
- */
+
 
 #include "FreeRTOS.h"
 #include "cmsis_os.h"
@@ -16,7 +10,6 @@
 #include "semphr.h"
 
 modbusHandler_t *mHandlers[MAX_M_HANDLERS];
-
 #define bitRead(value, bit) (((value) >> (bit)) & 0x01)
 #define bitSet(value, bit) ((value) |= (1UL << (bit)))
 #define bitClear(value, bit) ((value) &= ~(1UL << (bit)))
@@ -358,7 +351,7 @@ int8_t SendQuery(modbusHandler_t *modH ,  modbus_t telegram )
 
 	uint8_t u8regsno, u8bytesno;
 	uint8_t  error = 0;
-	//xSemaphoreTake(modH->ModBusSphrHandle , portMAX_DELAY); //before processing the message get the semaphore
+	xSemaphoreTake(modH->ModBusSphrHandle , portMAX_DELAY); //before processing the message get the semaphore
 
 	if (modH->u8id!=0) error = ERR_NOT_MASTER;
 	if (modH->i8state != COM_IDLE) error = ERR_POLLING ;
@@ -444,6 +437,8 @@ int8_t SendQuery(modbusHandler_t *modH ,  modbus_t telegram )
 	    break;
 	}
 
+	xSemaphoreGive(modH->ModBusSphrHandle);
+
 	sendTxBuffer(modH);
 	modH->i8state = COM_WAITING;
 	modH->i8lastError = 0;
@@ -511,6 +506,8 @@ void StartTaskModbusMaster(void *argument)
 
 
 	  modH->i8lastError = u8exception;
+
+	  xSemaphoreTake(modH->ModBusSphrHandle , portMAX_DELAY); //before processing the message get the semaphore
 	  // process answer
 	  switch( modH->au8Buffer[ FUNC ] )
 	  {
@@ -535,7 +532,7 @@ void StartTaskModbusMaster(void *argument)
 	  }
 	  modH->i8state = COM_IDLE;
 
-	  //xSemaphoreGive(modH->ModBusSphrHandle); //Release the semaphore
+	  xSemaphoreGive(modH->ModBusSphrHandle); //Release the semaphore
 	  //return i8state;
 	  continue;
 	 }
@@ -878,7 +875,11 @@ void sendTxBuffer(modbusHandler_t *modH)
          // must wait transmission end before changing pin state
          //return RS485 transceiver to receive mode
 
+    	 #if defined(STM32H745xx) || defined(STM32H743xx)  || defined(STM32F303xE)
+    	 while((modH->port->Instance->ISR & USART_ISR_TC) ==0 )
+         #else
     	 while((modH->port->Instance->SR & USART_SR_TC) ==0 )
+		 #endif
     	 {
     		taskYIELD();
     	 }
